@@ -46,6 +46,16 @@ python server.py
 
 Server listens on `http://127.0.0.1:8765`. Keep this terminal open while practicing.
 
+### Deploy to Render
+
+1. Push this repository to GitHub.
+2. In [Render](https://render.com/), choose **New → Blueprint** and select the repository.
+3. Render detects `render.yaml`. Enter `NOTION_TOKEN`, `PAGE_ID`, and `DATABASE_ID` when prompted.
+4. Wait for the service health check at `/health` to pass.
+5. If Render assigns a URL other than `https://leetcode-notion-tracker.onrender.com`, update `SERVER_URL` in the userscript with the service URL followed by `/track-problem`, then reinstall or update the Tampermonkey script.
+
+The Render service uses the `PORT` value provided by Render automatically. The free service may sleep after inactivity, so the first request can take a few seconds.
+
 ### 3. Install the browser userscript
 
 1. Install [Tampermonkey](https://www.tampermonkey.net/) in Chrome/Edge/Firefox.

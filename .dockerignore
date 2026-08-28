@@ -1,0 +1,14 @@
+.env
+.env.*
+!.env.example
+.git/
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+test.py
+test_one.py
+README.md
+start.ps1
+userscript/

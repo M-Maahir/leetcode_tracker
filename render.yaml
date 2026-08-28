@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: leetcode-notion-tracker
+    runtime: docker
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: NOTION_TOKEN
+        sync: false
+      - key: PAGE_ID
+        sync: false
+      - key: DATABASE_ID
+        sync: false

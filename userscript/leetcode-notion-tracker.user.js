@@ -16,7 +16,7 @@
 (function () {
     "use strict";
 
-    const SERVER_URL = "http://127.0.0.1:8765/track-problem";
+    const SERVER_URL = "https://leetcode-notion-tracker.onrender.com/track-problem";
     const seenSubmissionIds = new Set();
 
     function platform() {

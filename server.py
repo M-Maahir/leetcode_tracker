@@ -23,7 +23,7 @@ from notion_tracker import add_problem_to_tracker, map_submission_status
 
 load_dotenv()
 
-PORT = int(os.getenv("SERVER_PORT", "8765"))
+PORT = int(os.getenv("PORT", os.getenv("SERVER_PORT", "8765")))
 
 app = FastAPI(title="LeetCode Notion Tracker")
 
@@ -93,4 +93,4 @@ def track_problem(payload: ProblemPayload) -> dict[str, Any]:
 if __name__ == "__main__":
     print(f"LeetCode/NeetCode Notion tracker listening on http://127.0.0.1:{PORT}")
     print("Install the Tampermonkey userscript, then submit a problem to test.")
-    uvicorn.run("server:app", host="127.0.0.1", port=PORT, reload=False)
+    uvicorn.run("server:app", host="0.0.0.0", port=PORT, reload=False)
